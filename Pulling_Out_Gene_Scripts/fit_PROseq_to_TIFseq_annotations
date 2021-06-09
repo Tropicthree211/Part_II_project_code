@@ -1,0 +1,15 @@
+% if chromosomej_startpoints(k,1)>size(PROseq_sample{j, 2}, 1)
+%     gene_positions{j, 2}(k, :) = [];
+%     gene_positions_for_nogene_mean{j, 2}(k,:) = [] 
+   
+    
+for cctr=1:1:NoChromosomes
+    for sctr= 1:1:2
+        for gctr= size(gene_positions{cctr, sctr}(gctr, :)):-1:1
+            if gene_positions{cctr, sctr}(gctr, :) > size(PROseq_sample{cctr,sctr}, 1)
+                gene_positions{cctr, sctr}(gctr, :) = [];
+            end
+        end
+    end
+end
+
